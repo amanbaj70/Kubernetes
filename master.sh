@@ -100,6 +100,9 @@ kubectl taint nodes --all node-role.kubernetes.io/control-plane-
 ### INSTALL WEAVE NETWORK ###
 kubectl apply -f "https://cloud.weave.works/k8s/net?k8s-version=$(kubectl version | base64 | tr -d '\n')"
 #kubectl apply -f https://docs.projectcalico.org/manifests/calico.yaml
+
+### FLANNEL Network ###
+kubectl apply -f https://github.com/flannel-io/flannel/releases/latest/download/kube-flannel.yml
 -----------------------------------------------------------------------------------------------
 kubectl get po -n kube-system
 kubectl get nodes
